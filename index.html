@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web Glow Estates</title>
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {font-family: 'Segoe UI', sans-serif; background:#0c0c0c; color:white; line-height:1.6;}
+
+    header {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:20px 60px; background:#111; position:sticky; top:0; z-index:1000;
+      border-bottom:1px solid #333;
+    }
+    header h1 {font-size:28px; color:#f5c542; font-weight:bold;}
+    nav a {color:white; margin:0 15px; text-decoration:none; font-weight:500;}
+    nav a:hover {color:#f5c542;}
+
+    .hero {
+      height:100vh; background:url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display:flex; justify-content:center; align-items:center; text-align:center; position:relative;
+    }
+    .hero::after {
+      content:""; position:absolute; inset:0; background:rgba(0,0,0,0.6);
+    }
+    .hero-content {position:relative; z-index:1; max-width:800px;}
+    .hero h2 {font-size:64px; margin-bottom:20px;}
+    .hero p {font-size:20px; margin-bottom:30px;}
+    .btn {
+      display:inline-block; padding:12px 30px; background:#f5c542; color:black; font-weight:bold;
+      border-radius:30px; text-decoration:none; transition:0.3s;
+    }
+    .btn:hover {background:#ffd75e;}
+
+    section {padding:80px 60px;}
+    h2.section-title {text-align:center; font-size:40px; margin-bottom:50px; color:#f5c542;}
+
+    .listings {
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px;
+    }
+    .card {
+      background:#1a1a1a; border-radius:15px; overflow:hidden; box-shadow:0 5px 20px rgba(0,0,0,0.6);
+      transition:transform 0.3s;
+    }
+    .card:hover {transform:translateY(-10px);}
+    .card img {width:100%; height:220px; object-fit:cover;}
+    .card-body {padding:20px;}
+    .card-body h3 {font-size:22px; margin-bottom:10px;}
+    .price {color:#f5c542; font-weight:bold; margin-bottom:15px;}
+
+    .about {max-width:900px; margin:auto; text-align:center; font-size:18px; color:#bbb;}
+
+    .testimonials {
+      display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:20px;
+    }
+    .testimonial {
+      background:#1a1a1a; padding:25px; border-radius:15px; font-style:italic; color:#ddd;
+      box-shadow:0 5px 15px rgba(0,0,0,0.4);
+    }
+    .testimonial h4 {margin-top:15px; font-style:normal; color:#f5c542;}
+
+    footer {
+      background:#111; text-align:center; padding:30px; border-top:1px solid #333; color:#aaa;
+    }
+    footer .socials a {
+      margin:0 10px; color:#f5c542; text-decoration:none; font-size:18px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Web Glow Estates</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#listings">Listings</a>
+      <a href="#about">About</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <h2>Discover Luxury Living</h2>
+      <p>Exclusive properties tailored for extraordinary lifestyles.</p>
+      <a href="#listings" class="btn">Explore Listings</a>
+    </div>
+  </section>
+
+  <section id="listings">
+    <h2 class="section-title">Featured Listings</h2>
+    <div class="listings">
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1600607689366-3d31d6f5aa8b?auto=format&fit=crop&w=1000&q=80" alt="Penthouse">
+        <div class="card-body">
+          <h3>Luxury Penthouse</h3>
+          <p>New York, NY</p>
+          <p class="price">$4,200,000</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=1000&q=80" alt="Mountain Retreat">
+        <div class="card-body">
+          <h3>Mountain Retreat</h3>
+          <p>Aspen, CO</p>
+          <p class="price">$1,800,000</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&w=1000&q=80" alt="Beachfront Villa">
+        <div class="card-body">
+          <h3>Modern Beachfront Villa</h3>
+          <p>Miami, FL</p>
+          <p class="price">$2,500,000</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1613490493576-7e9a88a1d21a?auto=format&fit=crop&w=1000&q=80" alt="Dubai Mansion">
+        <div class="card-body">
+          <h3>Royal Mansion</h3>
+          <p>Dubai, UAE</p>
+          <p class="price">$12,000,000</p>
+          <a href="#" class="btn">View Details</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2 class="section-title">About Us</h2>
+    <p>
+      At Web Glow Estates, we redefine modern luxury by connecting discerning clients with the world’s most prestigious properties. 
+      Our dedicated team ensures a seamless experience from discovery to ownership, delivering elegance, sophistication, and trust in every deal.
+    </p>
+  </section>
+
+  <section id="testimonials">
+    <h2 class="section-title">Client Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial">
+        "Web Glow Estates found us the dream villa we thought only existed in magazines. Exceptional service!"
+        <h4>- Sarah M.</h4>
+      </div>
+      <div class="testimonial">
+        "Professional, classy, and trustworthy. Their listings are hand-picked masterpieces."
+        <h4>- David R.</h4>
+      </div>
+      <div class="testimonial">
+        "The team went above and beyond to secure our Dubai mansion. Highly recommended."
+        <h4>- Aisha K.</h4>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="about">
+    <h2 class="section-title">Get In Touch</h2>
+    <p>Interested in a property or want to schedule a private tour? Reach out to us today.</p>
+    <a href="mailto:info@webglowestates.com" class="btn">Contact Us</a>
+  </section>
+
+  <footer>
+    <p>© 2025 Web Glow Estates. All rights reserved.</p>
+    <div class="socials">
+      <a href="#">Instagram</a>
+      <a href="#">Facebook</a>
+      <a href="#">LinkedIn</a>
+    </div>
+  </footer>
+
+</body>
+</html>
